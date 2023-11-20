@@ -14,20 +14,27 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Row(
                   children: [
-                    //icon inside a white circle
                     Container(
-                      height: 50,
-                      width: 50,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(50),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 10,
+                            offset: Offset(0, 5),
+                          )
+                        ],
                       ),
-                      child: const Icon(
-                        Icons.person,
-                        size: 30,
+                      child: const Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: Icon(
+                          Icons.person,
+                          size: 30,
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -87,27 +94,58 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 20, 30, 20),
+                    margin: const EdgeInsets.fromLTRB(0, 20, 30, 20),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Colors.green[400]),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
+                        color: Colors.green[400],
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.green,
+                            blurRadius: 10,
+                            offset: Offset(0, 5),
+                          )
+                        ]),
+                    child: const Padding(
+                      padding: EdgeInsets.all(20.0),
                       child: Icon(Icons.filter_alt),
                     ),
                   )
                 ],
               ),
-              //3 white rounded border colors with icons inside
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ButtonContainerWithIcon(
-                    icon: Icons.person,
-                    text: "Profile",
+                    icon: Icons.chat,
+                    text: "Community",
                   ),
                   ButtonContainerWithIcon(icon: Icons.wallet, text: "Wallet"),
+                  ButtonContainerWithIcon(
+                    icon: Icons.theater_comedy,
+                    text: "Theater",
+                  )
                 ],
+              ),
+              const Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Row(
+                  children: [
+                    Text(
+                      "Popular",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
               ),
               Expanded(
                 child: Container(),
